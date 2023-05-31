@@ -1,4 +1,4 @@
-﻿# 1.Implementasikan kelas Mahasiswa, Jurusan dan Universitas sesuai dengan spesifikasi yang diberikan.
+# 1.Implementasikan kelas Mahasiswa, Jurusan dan Universitas sesuai dengan spesifikasi yang diberikan.
 class Mahasiswa:
 # membuat kelas Mahasiswa
     def __init__(self, nama, npm, jurusan):
@@ -74,18 +74,24 @@ UniversitasXYZ = Universitas("Universitas XYZ")
 JurusanTI = Jurusan("Teknik Informatika")
 # membuat objek JurusanTI yang diinisialisi oleh fungsi Jurusan dengan parameter "Teknik Informatika"
 UniversitasXYZ.tambah_jurusan(JurusanTI)
-# menjalankan fungsi tambah_jurusan dengan parameter 
+# menjalankan fungsi tambah_jurusan pada objek UniversitasXYZ dengan parameter yang diambil dari objek JurusanTI
 
 #4.Buatlah objek Mahasiswa dengan nama "Kalian masing", npm "Kalian masing", dan masukkan ke dalam Jurusan Teknik Informatika di Universitas XYZ.
-# Membuat objek Mahasiswa
-mahasiswa_kalian = Mahasiswa("Sophina Shafa Salsabila", "G1A022021", JurusanTI)
-# Menambahkan mahasiswa ke daftar mahasiswa pada jurusan
-JurusanTI.tambah_mahasiswa(mahasiswa_kalian)
+DataMahasiswa = Mahasiswa("Sophina Shafa Salsabila", "G1A022021", JurusanTI)
+# membuat objek DataMahasiswa yang diinisialisi oleh fungsi Mahasiswa dengan parameter "Sophina Shafa Salsabila", "G1A022021", dan parameter jurusan dari objek JurusanTI
+JurusanTI.tambah_mahasiswa(DataMahasiswa)
+# menjalankan fungsi tambah_mahasiswa pada objek JurusanTI dengan parameter yang diambil dari objek DataMahasiswa
 
 #5.Tampilkan daftar jurusan yang ada di Universitas XYZ.
-# Menampilkan daftar jurusan di universitas XYZ
 UniversitasXYZ.tampilkan_daftar_jurusan()
+# menjalankan fungsi tampilkan_daftar_jurusan pada objek UniversitasXYZ
 
 #6.Tampilkan daftar mahasiswa yang terdaftar dalam Jurusan Teknik Informatika di Universitas XYZ.
-# Menampilkan daftar mahasiswa di Jurusan Teknik Informatika di Universitas XYZ
 JurusanTI.tampilkan_daftar_mahasiswa()
+# menjalankan fungsi tampilkan_daftar_mahasiswa pada objek JurusanTI
+
+'''
+Nama    : Sophina Shafa Salsabila
+NPM     : G1A022021
+Kelas   : A
+'''
