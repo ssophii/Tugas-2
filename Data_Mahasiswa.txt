@@ -1,0 +1,91 @@
+﻿# 1.Implementasikan kelas Mahasiswa, Jurusan dan Universitas sesuai dengan spesifikasi yang diberikan.
+class Mahasiswa:
+# membuat kelas Mahasiswa
+    def __init__(self, nama, npm, jurusan):
+    # medeklarasikan konstruktor pada kelas Mahasiswa yang digunakan untuk menginisialisasikan objek.
+    # memiliki 3 parameter, yaitu nama, npm, dan jurusan.
+        self.nama = nama
+        # menginisialisasi atribut nama dari parameter nama
+        self.npm = npm
+        # menginisialisasi atribut npm dari parameter npm
+        self.jurusan = jurusan
+        # menginisialisasi atribut jurusan dari parameter jurusan
+    def tampilkan_info(self):
+    # fungsi yang digunakan untuk menampilan inisialisasi atribut
+        print("Nama     : ", self.nama)
+        # menampilkan inisialisasi nama
+        print("NPM      : ", self.npm)
+        # menampilkan inisialisasi npm
+        print("Jurusan  : ", self.jurusan.NamaJurusan)
+        # menampilkan inisialisasi jurusan yang disimpan di dalam fungsi Jurusan dengan nama atribut NamaJurusan
+
+class Jurusan:
+# membuat kelas Jurusan
+    def __init__(self, nama_jurusan):
+    # medeklarasikan konstruktor pada kelas Jurusan yang digunakan untuk menginisialisasikan objek.
+    # memiliki parameter nama_jurusan.
+        self.NamaJurusan = nama_jurusan
+        # menginisialisasi atribut NamaJurusan dari parameter nama_jurusan
+        self.DaftarMahasiswa = []
+        # membuat atribut DaftarMahasiswa sebagai daftar kosong yang akan menyimpn objek mahasiswa yang di inisialisasikan
+    def tambah_mahasiswa(self, mahasiswa):
+    # fungsi yang digunakan untuk menambahkan inisialisasi objek pada atribut DaftarMahasiswa
+        self.DaftarMahasiswa.append(mahasiswa)
+        # digunakan untuk menambahkan objek yang telah diinisialisasikan pada kelas mahasiswa ke dalam daftar yang telah dibuat pada atribut DaftarMahasiswa
+    def tampilkan_daftar_mahasiswa(self):
+    # fungsi yang digunakan untuk menampilan inisialisasi atribut
+        print("\nDaftar Mahasiswa di Jurusan", self.NamaJurusan)
+        # perintah cetak untuk menampilkan string "Daftar Mahasiswa di Jurusan" dan objek di dalam atribut NamaJurusan
+        for index, mahasiswa in enumerate(self.DaftarMahasiswa, start =1):
+        # loop for yang digunakan untuk mengiterasi objek didalam atrubut DaftarMahasiswa
+        # 'index' digunkan untuk menyimpan nomor indeks setiap elemen mahasiswa di dalam daftar yang dimulai dari 1
+        # fungsi 'enumerate()' digunakan untuk memanggil penomoran indeks secara otomatis
+            print(f"{index}) {mahasiswa.nama}, NPM : {mahasiswa.npm}.")
+            # kode cetak dengan format string yang mencetak indeks, atribut nama dan npm dari kelas Mahasiswa
+
+class Universitas:
+# membuat kelas Universitas
+    def __init__(self, nama_universitas):
+    # medeklarasikan konstruktor pada kelas Jurusan yang digunakan untuk menginisialisasikan objek.
+    # memiliki parameter nama_universitas.
+        self.NamaUniversitas = nama_universitas
+        # menginisialisasi atribut NamaUniversitas dari parameter nama_universitas
+        self.DaftarJurusan = []
+        # membuat atribut DaftarJurusan sebagai daftar kosong yang akan menyimpan objek jurusan yang di inisialisasikan
+    def tambah_jurusan(self, jurusan):
+    # fungsi yang digunakan untuk menambahkan inisialisasi objek pada atribut DaftarJurusan
+        self.DaftarJurusan.append(jurusan)
+        # digunakan untuk menambahkan objek yang telah diinisialisasikan pada kelas mahasiswa ke dalam daftar yang telah dibuat pada atribut DaftarJurusan
+    def tampilkan_daftar_jurusan(self):
+        print("Daftar Jurusan di Universitas", self.NamaUniversitas)
+        # perintah cetak untuk menampilkan string "Daftar Mahasiswa di Jurusan" dan objek di dalam atribut NamaUniversitas
+        for index, jurusan in enumerate(self.DaftarJurusan, start=1):
+        # loop for yang digunakan untuk mengiterasi objek didalam atrubut DaftarJurusan
+        # 'index' digunkan untuk menyimpan nomor indeks setiap elemen jurusan di dalam daftar yang dimulai dari 1
+        # fungsi 'enumerate()' digunakan untuk memanggil penomoran indeks secara otomatis
+            print(f"{index}. {jurusan.NamaJurusan}")
+            # kode cetak dengan format string yang mencetak indeks, atribut jurusan dari kelas Mahasiswa
+
+#2.Buatlah sebuah objek Universitas dengan nama "XYZ University".
+UniversitasXYZ = Universitas("Universitas XYZ")
+# membuat objek UniversitasXYZ yang diinisialisi oleh fungsi Universitas dengan parameter "Universitas XYZ"
+
+#3.Buatlah objek Jurusan dengan nama "Teknik Informatika" dan tambahkan objek tersebut ke dalam Universitas XYZ.
+JurusanTI = Jurusan("Teknik Informatika")
+# membuat objek JurusanTI yang diinisialisi oleh fungsi Jurusan dengan parameter "Teknik Informatika"
+UniversitasXYZ.tambah_jurusan(JurusanTI)
+# menjalankan fungsi tambah_jurusan dengan parameter 
+
+#4.Buatlah objek Mahasiswa dengan nama "Kalian masing", npm "Kalian masing", dan masukkan ke dalam Jurusan Teknik Informatika di Universitas XYZ.
+# Membuat objek Mahasiswa
+mahasiswa_kalian = Mahasiswa("Sophina Shafa Salsabila", "G1A022021", JurusanTI)
+# Menambahkan mahasiswa ke daftar mahasiswa pada jurusan
+JurusanTI.tambah_mahasiswa(mahasiswa_kalian)
+
+#5.Tampilkan daftar jurusan yang ada di Universitas XYZ.
+# Menampilkan daftar jurusan di universitas XYZ
+UniversitasXYZ.tampilkan_daftar_jurusan()
+
+#6.Tampilkan daftar mahasiswa yang terdaftar dalam Jurusan Teknik Informatika di Universitas XYZ.
+# Menampilkan daftar mahasiswa di Jurusan Teknik Informatika di Universitas XYZ
+JurusanTI.tampilkan_daftar_mahasiswa()
